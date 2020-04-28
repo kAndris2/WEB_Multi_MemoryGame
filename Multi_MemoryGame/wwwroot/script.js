@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll('.card');
+//let cards = null;
 
 let turned = false;
 let noturn = false;
@@ -87,8 +88,6 @@ function shuffle() {
   });
 }
 
-cards.forEach(card => card.addEventListener('click', turn));
-
 function startTimer(duration, display) {
   var timer = duration, minutes, seconds;
   myTimer = setInterval(function () {
@@ -119,3 +118,17 @@ function tick(){
 
 
 }
+
+function getXHR() {
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("???", getTable);
+    xhr.open("GET", "/Cards");
+    xhr.send();
+}
+
+function getTable() {
+    cards = this.responseText;
+}
+
+//getXHR();
+cards.forEach(card => card.addEventListener('click', turn));
