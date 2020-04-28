@@ -1,10 +1,208 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="UTF-8">
+
+    <title>Memory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    <script src="http://kit.fontawesome.com/b8927bd18e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
+
+<!--
+CARDS:
+<i class="fab fa-adobe fa-10x"></i>
+<i class="back fab fa-buysellads fa-10x"></i>
+<i class="fab fa-apple fa-10x"></i>
+<i class="fab fa-android fa-10x"></i>
+<i class="fab fa-facebook-messenger"></i>
+
+BACK:
+<i class="fas fa-question fa-10x"></i>
+-->
+
 <body>
-    Faka!
+    <!-- Info box -->
+    <div class="info-box">
+        <div id="points">
+            Points:
+        </div>
+        <div>
+            Remaining time:
+            <span id="time"></span>
+        </div>
+    </div>
+
+    <!-- Info box end-->
+    <div class="game-section">
+        <div class="card" data-id="Adobe">
+            <!--<img class="front" src="img/a.jpg" alt="A">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-adobe fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Adobe">
+            <!--<img class="front" src="img/a.jpg" alt="A">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-adobe fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Apple">
+            <!--<img class="front" src="img/b.jpg" alt="B">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-apple fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Apple">
+            <!--<img class="front" src="img/b.jpg" alt="B">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-apple fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Android">
+            <!--<img class="front" src="img/cica.jpg" alt="Cicus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-android fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Android">
+            <!--<img class="front" src="img/cica.jpg" alt="Cicus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-android fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Messenger">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-facebook-messenger fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Messenger">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-facebook-messenger fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Docker">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-docker fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Docker">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-docker fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Linux">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-linux fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Linux">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-linux fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+    </div>
+
+
+    <!-- Button trigger modal -->
+    <button type="button" style="display:none;" id="modal-on" class="btn btn-primary" data-toggle="modal"
+            data-target="#exampleModalCenter">
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Game Over</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to start another?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="resetAll()" class="btn btn-primary">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <button type="button" style="display:none;" id="time-over" class="btn btn-primary" data-toggle="modal"
+            data-target="#modal-time-over">
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-time-over" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Game Over</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    The time is over.
+                    Do you want to start another?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="resetAll()" class="btn btn-primary">Restart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--TICK -->
+    <div class="tick-container" id="trigcont">
+        <div id="trigger"></div>
+        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+        <path class="circ path" style="fill:none;stroke:#11ad00;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+        M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z" />
+
+        <polyline class="tick path" style="fill:none;stroke:#11ad00;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+        11.6,20 15.9,24.2 26.4,13.8 " />
+
+    </svg>
+    </div>
+    <!--<button sytle="display:none;" id="tick" onclick="tick()"></button>-->
+    <!--TICKEND-->
+    <script src="./script.js"></script>
+
 </body>
 </html>
