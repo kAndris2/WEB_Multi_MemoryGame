@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
 
     <title>Memory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -17,7 +18,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b8927bd18e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <!--
@@ -52,12 +53,13 @@ BACK:
         <div id="points">
             Points:
         </div>
-        <div>Remaining time:
+        <div>
+            Remaining time:
             <span id="time"></span>
         </div>
     </div>
-    <!-- Info box end-->
 
+    <!-- Info box end-->
     <div class="game-section">
         <div class="card" data-id="Adobe">
             <!--<img class="front" src="img/a.jpg" alt="A">
@@ -114,6 +116,34 @@ BACK:
             <i class="front fab fa-facebook-messenger fa-7x"></i>
             <i class="back fas fa-question fa-10x"></i>
         </div>
+
+        <div class="card" data-id="Docker">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-docker fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Docker">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-docker fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Linux">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-linux fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
+
+        <div class="card" data-id="Linux">
+            <!--<img class="front" src="img/kutya.jpg" alt="Kutyus">
+            <img class="back" src="img/back.png" alt="Card Háta">-->
+            <i class="front fab fa-linux fa-7x"></i>
+            <i class="back fas fa-question fa-10x"></i>
+        </div>
     </div>
 
 
@@ -143,6 +173,7 @@ BACK:
             </div>
         </div>
     </div>
+    </div>
 
     <button type="button" style="display:none;" id="time-over" class="btn btn-primary" data-toggle="modal"
         data-target="#modal-time-over">
@@ -170,7 +201,26 @@ BACK:
             </div>
         </div>
     </div>
-    <script src="./js/script.js"></script>
+    <!--TICK -->
+    <div class="tick-container" id="trigcont">
+        <div id="trigger"></div>
+        <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+            <path class="circ path"
+                style="fill:none;stroke:#11ad00;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;"
+                d="
+        M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z" />
+
+            <polyline class="tick path"
+                style="fill:none;stroke:#11ad00;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+        11.6,20 15.9,24.2 26.4,13.8 " />
+
+        </svg>
+    </div>
+    <!--<button sytle="display:none;" id="tick" onclick="tick()"></button>-->
+    <!--TICKEND-->
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

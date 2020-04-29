@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Merriweather";
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -22,7 +22,7 @@ body {
 
 .card {
   width: calc(25% - 1rem);
-  height: calc(33.333% - 1rem);
+  height: calc(33% - 1rem);
   margin: 5px;
   position: relative;
   transform: scale(1);
@@ -111,4 +111,38 @@ body {
   background-color: rgba(0, 0, 0, 0.294);
   z-index: 98;
   filter: blur(1px);
+/*TICK nek*/
+.tick-container {
+  position:fixed;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  z-index: -3;
+  width: 50%;
+  max-width: 250px;
+  margin: 0 auto;
+}
+.circ{
+    opacity: 0;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    -webkit-transition: all 0.7s;
+    -moz-transition: all 0.7s;
+    -ms-transition: all 0.7s;
+    -o-transition: all 0.7s;
+    transition: all 0.7s;
+}
+.tick{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    -moz-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    -ms-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    -o-transition: stroke-dashoffset 0.7s 0.3s ease-out;
+    transition: stroke-dashoffset 0.7 0.3s ease-out;
+}
+.drawn + svg .path{
+    opacity: 1;
+    stroke-dashoffset: 0;
+
 }

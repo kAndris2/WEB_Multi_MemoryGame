@@ -1,4 +1,5 @@
-const cards = document.querySelectorAll('.card');
+//const cards = document.querySelectorAll('.card');
+let cards = null;
 
 let turned = false;
 let noturn = false;
@@ -8,8 +9,8 @@ var allPoints = 0;
 let myTimer = null;
 
 window.onload = function () {
-  /* display = document.querySelector('#time');
-  startTimer(60, display); */
+  display = document.querySelector('#time');
+  startTimer(60, display);
 };
 
 
@@ -32,6 +33,7 @@ function evaluateChoice() {
   let isMatch = firstChoice.dataset.id === secondChoice.dataset.id;
   if (isMatch) {
     allPoints += 1;
+    tick();
     document.getElementById("points").innerHTML = "Points: " + allPoints;
     if (allPoints === (cards.length / 2)) gameOver();
   }
@@ -74,19 +76,17 @@ function gameOver() {
 
 (function shuffleStart() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 8);
+    let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })();
 
 function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 8);
+    let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 }
-
-cards.forEach(card => card.addEventListener('click', turn));
 
 function startTimer(duration, display) {
   var timer = duration, minutes, seconds;
@@ -119,3 +119,31 @@ function hideNicknameBox() {
   display = document.querySelector('#time');
   startTimer(60, display);
 }
+//TICK nek
+function tick() {
+  var element = document.getElementById("trigger");
+  document.getElementById("trigcont").style.zIndex = "10";
+  element.classList.toggle("drawn");
+  setTimeout(() => { element.classList.toggle("drawn"); document.getElementById("trigcont").style.zIndex = "-10"; }, 800);
+
+
+}
+
+function getXHR() {
+  const xhr = new XMLHttpRequest();
+  xhr.addEventListener("load", getTable);
+  xhr.open("GET", "/Cards");
+  xhr.send();
+}
+
+function getTable() {
+  cards = this.responseText;
+  console.log(cards);
+}
+
+const xhr = new XMLHttpRequest();
+xhr.addEventListener("load", getTable);
+xhr.open("GET", "/Card");
+xhr.send();
+//getXHR();
+//cards.forEach(card => card.addEventListener('click', turn));
