@@ -1,5 +1,5 @@
-const cards = document.querySelectorAll('.card');
-//let cards = null;
+//const cards = document.querySelectorAll('.card');
+let cards = null;
 
 let turned = false;
 let noturn = false;
@@ -121,14 +121,19 @@ function tick(){
 
 function getXHR() {
     const xhr = new XMLHttpRequest();
-    xhr.addEventListener("???", getTable);
+    xhr.addEventListener("load", getTable);
     xhr.open("GET", "/Cards");
     xhr.send();
 }
 
 function getTable() {
     cards = this.responseText;
+    console.log(cards);
 }
 
+const xhr = new XMLHttpRequest();
+xhr.addEventListener("load", getTable);
+xhr.open("GET", "/Card");
+xhr.send();
 //getXHR();
-cards.forEach(card => card.addEventListener('click', turn));
+//cards.forEach(card => card.addEventListener('click', turn));

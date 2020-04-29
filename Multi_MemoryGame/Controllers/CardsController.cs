@@ -16,6 +16,7 @@ namespace Multi_MemoryGame.Controllers
         {
             List<Card> Cards = new List<Card>();
 
+            Cards.Add(new Card("Valami"));
 
             return Cards;
         }
