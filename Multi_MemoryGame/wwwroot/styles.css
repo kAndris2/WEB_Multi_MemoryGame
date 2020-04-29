@@ -111,6 +111,7 @@ body {
   background-color: rgba(0, 0, 0, 0.294);
   z-index: 98;
   filter: blur(1px);
+}
 /*TICK nek*/
 .tick-container {
   position:fixed;
@@ -144,5 +145,4 @@ body {
 .drawn + svg .path{
     opacity: 1;
     stroke-dashoffset: 0;
-
 }
